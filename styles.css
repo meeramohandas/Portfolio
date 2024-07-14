@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+body {
+  position: relative;
+  margin: 1rem;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+header h1 {
+  flex: 1;
+}
+
+.icon {
+  position: relative;
+  font-size: 3rem;
+  margin: 0 20px;
+  bottom: 0.25rem;
+}
+
+.nav-links {
+  display: flex;
+  margin: 1rem;
+  gap: 1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-links a::before {
+  content: '';
+  width: 100%;
+  background-color: black;
+  bottom: -2px;
+  height: 0.2em;
+  position: absolute;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+main .home-section {
+  /* background-color: wheat; */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 10rem;
+  height: 100vh;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+main img {
+  display: block;
+  position: relative;
+  border-radius: 38% 62% 38% 62% / 58% 41% 59% 42%;
+  width: 500px;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+main .image {
+  gap: 1rem;
+  height: auto;
+}
+
+main .image::before {
+  content: '';
+  background-color: #f9f5f5;
+  position: absolute;
+  top: 25%;
+  overflow: hidden;
+  left: 30%;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-radius: 43% 57% 89% 11% / 85% 14% 86% 15%;
+}
+
+@media (max-width: 680px) {
+  main .image {
+    position: relative;
+    top: 70px;
+    width: 300px;
+    height: auto;
+  }
+  header h1 {
+    display: none;
+  }
+  header i {
+    flex: 1;
+  }
+
+  main img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  main .image::before {
+    top: 120%;
+    left: 0;
+  }
+  .card-collection {
+    /* adding the carousel styling */
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    /* adding the carousel styling */
+  }
+
+}
+
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.profile-section h1 {
+  font-size: xx-large;
+  margin-bottom: 0;
+}
+
+.profile-section p {
+  margin-top: 0;
+}
+
+.profile-section i {
+  transition: all 0.3s ease;
+  &:hover {
+    transform: scale(1.2);
+    color: black !important;
+  }
+}
+
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section h1 {
+  text-align: center;
+}
+
+.skills {
+  /* max-width: 600px; */
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+.skills h3 {
+  text-align: center;
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.skills ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.skills li {
+  background-color: #597a9d;
+  color: #fff;
+  padding: 10px 15px;
+  margin: 5px 5px;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+.skills li:hover {
+  background-color: #0056b3;
+}
+
+.card-collection {
+  display: flex;
+  gap: 1rem;
+  padding-top: 20px;
+  flex-wrap: wrap;
+  overflow-x: scroll;
+  align-items: center;
+  justify-content: center;
+  /* &::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  } */
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 0 3px;
+  margin-bottom: 20px;
+  min-width: 300px;
+  width: 300px;
+  height: 300px;
+  transition: transform 0.3s;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card h4 {
+  margin: 0;
+  padding: 15px;
+  font-size: 20px;
+}
+
+.card p {
+  padding: 0 15px;
+  font-size: 16px;
+  color: #333333;
+  max-height: 100px;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+}
+
+.tech-div {
+  padding: 15px;
+}
+
+.tech-div span {
+  font-weight: bold;
+  color: grey;
+}
+
+.tech {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0 0;
+}
+
+.tech li {
+  background-color: #f1f1f1;
+  border-radius: 4px;
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 5px 5px 0 0;
+  font-size: 14px;
+  color: #333333;
+}
+
+/* Slider CSS styles */
+
+.slider {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.slide {
+  flex: 0 0 100%; /* Make each slide take full width */
+  height: 300px; /* Set a fixed height for the slides */
+  max-width: 300px;
+  background-color: #f0f0f0;
+  margin: 10px;
+  padding: 20px;
+}
+
+/* Slider CSS styles */
